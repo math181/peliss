@@ -1,0 +1,417 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --main-color: #AA5DF8;
+    --primary-color: #12F65E;
+    --black: #000;
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    list-style: none;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    background-color: white;
+}
+
+html::-webkit-scrollbar {
+    width: .6rem;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: gray;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+}
+
+
+section {
+    padding: 3rem 7%;
+}
+
+.heading {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    margin-top: 4rem;
+}
+
+.heading-title {
+    background-size: cover !important;
+    background-position: cover !important;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading-title h1 {
+    padding-top: 5rem;
+    font-size: 8rem;
+    text-transform: uppercase;
+    color: red;
+}
+
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 4rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    color: var(--primary-color);
+    background: var(--main-color);
+    position: relative;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    z-index: 0;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 19% 15%, 0% 100%);
+    z-index: -1;
+    background: var(--primary-color);
+    transition: .3s cubic-bezier(.38, 1.15, .7, 1.12);
+}
+
+
+.btn:hover:before {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+
+}
+
+.btn:hover {
+    color: var(--main-color);
+
+}
+
+/*Header */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+.header .logo i {
+    color: var(--black);
+    padding-right: .5rem;
+}
+
+.header .navbar a {
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: var(--black);
+}
+
+.header .navbar .active{
+    color: var(--main-color);
+}
+
+.header .navbar a:hover {
+    color: var(--main-color);
+}
+
+#menu {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--black);
+    display: none;
+}
+
+/*Fin*/
+
+
+
+/*Banner*/
+
+.banner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .hex {
+    position: relative;
+    width: 35rem;
+    height: 40rem;
+    margin: 3rem 1.5rem;
+}
+
+.banner .hex::before {
+    content: '';
+    position: absolute;
+    bottom: -7rem;
+    width: 100%;
+    height: 6rem;
+    background: radial-gradient(rgba(0, 0, 0, 0.15)), transparent, transparent;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.banner .hex:hover::before {
+    opacity: 0.8;
+    transform: scale(0.8);
+}
+
+.banner .hex .shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+    transition: .5s;
+}
+
+.banner .hex:hover .shape {
+    transform: translateY(-1rem);
+}
+
+.banner .hex .shape img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner .hex .shape .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(45deg, #5e3719 37.47%, #dfd09039 93.67%);
+    color: white;
+    opacity: 0;
+    transition: .5s;
+}
+
+.banner .hex .shape .content h2 {
+    font-size: 3rem;
+    padding-bottom: 1.8;
+}
+
+.banner .hex .shape .content p {
+    font-size: 1.7rem;
+    line-height: 1.8;
+}
+
+.banner .hex:hover .shape .content {
+    opacity: 1;
+}
+
+/*Fin*/
+
+/*Carrito*/
+
+
+#items {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.item button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.item button:hover {
+    background-color: #c82333;
+}
+
+
+
+#carrito-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    overflow-y: auto; 
+    height: 400px; 
+}
+
+/*FIN*/
+
+/*PAGO*/
+
+.btn-pago {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-pago:hover {
+    background-color: #0056b3;
+}
+
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+.btn-pago-container {
+    margin-left: auto; 
+}
+
+.btn-eliminar {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.btn-pago {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+
+
+
+
+/*Footer Inicio*/
+
+.footer {
+    background: white;
+}
+
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+    font-size: 2.2rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box p {
+    font-size: 1.5rem;
+    color: #666;
+    padding-bottom: .5rem;
+}
+
+.footer .box-container .box a {
+    font-size: 1.4rem;
+    color: #666;
+    padding: 1rem 0;
+    display: block;
+}
+
+.footer .box-container .box a:hover {
+    color: var(--primary-color);
+}
+
+.footer .box-container .box a:hover i {
+    padding-right: 2rem;
+}
+
+.footer .box-container .box a i {
+    padding-right: .5rem;
+    color: var(--primary-color);
+}
+
+.footer .box-container .box form input[type="email"] {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    margin: 1rem 0;
+    text-transform: none;
+}
+
+.footer .box-container .box form .btn {
+    cursor: pointer;
+    background: var(--primary-color);
+    color: var(--main-color);
+}
+
+.credit {
+    text-align: center;
+    color: white;
+    background-color: var(--main-color);
+    font-size: 2rem;
+}
+
+
+
+/*Final*/

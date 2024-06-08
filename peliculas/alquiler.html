@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler</title>
+</head>
+<body>
+    <h1 class="heading">Acción</h1>
+
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="img/gladiadior.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3>GLADIADOR</h3>
+                <div class="price">Q100.00</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <a href="#" class="btn" onclick="agregarAlCarrito('GLADIADOR', 100.00)">Alquilar</a>
+            </div>
+        </div>
+        <!-- Aquí van los demás elementos de la lista -->
+    </div>
+
+    <script>
+        function agregarAlCarrito(producto, precio) {
+            var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push({ producto: producto, precio: precio });
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert('Película agregada al carrito');
+        }
+    </script>
+</body>
+</html>
+

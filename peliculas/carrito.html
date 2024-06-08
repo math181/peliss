@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style_carrito.css">
+
+</head>
+
+<body>
+
+    <!--Header Inicio-->
+
+    <header class="header">
+
+        <a href="#" class="logo"> <i class="fa-solid fa-ghost">PelimaniaGT</i></a>
+
+        <nav class="navbar">
+            
+            <a href="about.html">Nosotros</a>
+            <a href="pelis.html" class="active">Peliculas</a>
+
+            <a href="carrito.html" class="active"> carrito</a>
+         
+
+        </nav>
+
+        <div id="menu" class="fas fa-bars"></div>
+
+
+
+    </header>
+
+    <!--Header Fin-->
+
+
+
+
+    <div class="heading-title" style="background: url(img/Banner_Web_Top_5.jpg) no-repeat;">
+        <h1></h1>
+    </div>
+
+    
+    <!--Carrito-->
+    
+    
+  <div id="carrito-container">
+    <div id="items"></div>
+    <div id="total">Total: Q0.00</div>
+     <a href="pago.html" class="btn-pago">Pago</a>
+</div>
+    
+    <script>
+        function mostrarCarrito() {
+            var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            var itemsDiv = document.getElementById('items');
+            itemsDiv.innerHTML = '';
+            carrito.forEach(function(item, index) {
+                var newItem = document.createElement('div');
+                newItem.className = 'item';
+                newItem.innerHTML = item.producto + ' - Q' + item.precio + ' <button onclick="eliminarPelicula(' + index + ')">Eliminar</button>';
+                itemsDiv.appendChild(newItem);
+            });
+        }
+    
+        function eliminarPelicula(index) {
+            var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.splice(index, 1);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+    
+        mostrarCarrito();
+    </script>
+    
+
+
+
+
+
+     <!--Footer Inicio-->
+
+     <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Enlaces</h3>
+                
+                <a href="about.html"> <i class="fas fa-arrow-right"></i> Nosotros</a>
+                <a href="menu.html"> <i class="fas fa-arrow-right"></i> Peliculas</a>
+                
+                
+            </div>
+
+            <div class="box">
+                <h3>Siguenos</h3>
+                <a href="#"> <i class="fab fa-facebook-f"></i> facebook</a>
+                <a href="#"> <i class="fab fa-twitter"></i> twitter</a>
+            </div>
+
+            <div class="box">
+                <h3></h3>
+               
+                <a href="#"> <i class="fab fa-instagram"></i> instagram</a>
+                <a href="#"> <i class="fab fa-pinterest"></i> pinterest</a>
+            </div>
+
+            <div class="box">
+                <h3>newletter</h3>
+                <p>Suscribete para estar informado</p>
+                <form action="">
+                    <input type="email" placeholder="enter your email">
+                    <input type="submit" value="subscribe" class="btn">
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="credit"> PelimaniaGT S.A. | Todos los derechos reservados</section>
+
+
+    <!--Footer Fin-->
+
+    <script src="carrito.js"></script>
+</body>
+
+</html>
+</body>
+</html>
